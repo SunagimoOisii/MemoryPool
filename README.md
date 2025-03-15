@@ -3,8 +3,6 @@
 ## 目次
 - [概要](#概要)
 - [使用技術](#使用技術)
-- [システム構成](#システム構成)
-- [プログラム ピックアップ](#プログラム--ピックアップ)
 
 ## 概要
 Vulkanでの**動的メモリ割り当ての最適化**を目的としたメモリプールです。<br>
@@ -15,23 +13,3 @@ Vulkanでの**動的メモリ割り当ての最適化**を目的としたメモ�
 ## 使用技術
 - Vulkan
 - C++
-
-## システム構成
-```mermaid
-classDiagram
-    direction LR
-
-    %% メモリ管理を行うクラス
-    class MemoryPool {
-        +MemoryPool(size_t blockSize, size_t blockCount)
-        +void* Allocate()
-        +void Deallocate(void* ptr)
-    }
-
-    %% メモリプールをテストするクラス
-    class MemoryPoolTest {
-        +void RunTests()
-    }
-
-    %% クラス間の関係
-    MemoryPoolTest --> MemoryPool : 使用
